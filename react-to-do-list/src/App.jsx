@@ -16,13 +16,13 @@ export default function App () {
   }
 
   function deleteToDo (id) {
-    setToDoArray(currentArray => {
+    setToDoArray((currentArray) => {
       return currentArray.filter(todo => todo.id !== id)
     })
   }
 
   function toggle (id) {
-    setToDoArray(currentArray => {
+    setToDoArray((currentArray) => {
       return currentArray.map(item => {
         if (item.id === id) {
           return {
@@ -30,6 +30,7 @@ export default function App () {
             completed: !item.completed
           }
         }
+        return item
       })
     })
   }

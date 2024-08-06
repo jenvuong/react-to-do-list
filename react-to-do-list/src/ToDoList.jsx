@@ -22,4 +22,5 @@ export function ToDoList ({ list, deleteToDo, toggle }) {
       <button className="clear-btn"><FontAwesomeIcon icon={faX}/>Clear all</button>
     </>
     )
+   
 }
