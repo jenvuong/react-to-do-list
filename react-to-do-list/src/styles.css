@@ -8,7 +8,7 @@
     --dark-text: #1e1e1e;
     --light-green: #E5F0E0;
     --dark-green: #B7D0AB;
-    --btn-hover: #4d4d4d;
+    --btn-hover: #e2e2e2;
 }
 
 * {
@@ -75,6 +75,8 @@ p {
     scrollbar-width: none;
     overflow-y: auto;
     width: 100%;
+    color: var(--text);
+    font-size: .9rem;
 }
 
 .list-item {
@@ -111,7 +113,7 @@ p {
 .btn:hover {
     cursor: pointer;
     background-color: var(--btn-hover);
-    color: var(--grey);
+    color: var(--black);
 }
 
 .clear-btn {

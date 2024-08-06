@@ -6,6 +6,7 @@ export function ToDoList ({ list, deleteToDo, toggle }) {
     return (
       <>
         <ul className="list">
+          {list.length === 0 && "No tasks"}
           {list.map(todo => {
             return (
               <ToDoItem 

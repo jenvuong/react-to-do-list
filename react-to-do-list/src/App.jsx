@@ -4,7 +4,16 @@ import { ToDoForm } from "./ToDoForm";
 import { ToDoList } from "./ToDoList";
 
 export default function App () {
-  const [toDoArray, setToDoArray] = useState([])
+  const [toDoArray, setToDoArray] = useState(() => {
+    const localValue = localStorage.getItem("ITEMS")
+    if (localValue == null) return []
+
+    return JSON.parse(localValue)
+  })
+
+  useEffect(() => {
+    localStorage.setItem('ITEMS', JSON.stringify(toDoArray))
+  }, [toDoArray])
 
   function addToDo (newItem) {
     setToDoArray(currentArray => {
