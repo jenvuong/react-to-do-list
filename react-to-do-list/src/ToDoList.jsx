@@ -1,19 +1,25 @@
+import { ToDoItem } from './ToDoItem'
+import { faX } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faTrash } from '@fortawesome/free-solid-svg-icons'
 
-export function ToDoList () {
+export function ToDoList ({ list, deleteToDo, toggle }) {
     return (
+      <>
         <ul className="list">
-        <li className="list-item">
-          <span>Go for a run</span>
-          <button className="check btn"><FontAwesomeIcon icon={faCheck}/></button>
-          <button className="trash btn"><FontAwesomeIcon icon={faTrash}/></button>
-        </li>
-        <li className='list-item'>
-          <span>Bake cake</span>
-          <button className="check btn"><FontAwesomeIcon icon={faCheck}/></button>
-          <button className="trash btn"><FontAwesomeIcon icon={faTrash}/></button>
-        </li>
+          {list.map(todo => {
+            return (
+              <ToDoItem 
+                id={todo.id} 
+                title={todo.itemName} 
+                key={todo.id}
+                completed={todo.completed}
+                deleteToDo={deleteToDo}
+                toggle={toggle}
+              />
+            )
+          })}
       </ul>
+      <button className="clear-btn"><FontAwesomeIcon icon={faX}/>Clear all</button>
+    </>
     )
 }

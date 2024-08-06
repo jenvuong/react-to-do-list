@@ -6,6 +6,9 @@
     --text: #757575;
     --box-border: #d9d9d9;
     --dark-text: #1e1e1e;
+    --light-green: #E5F0E0;
+    --dark-green: #B7D0AB;
+    --btn-hover: #4d4d4d;
 }
 
 * {
@@ -92,7 +95,7 @@ p {
     border-radius: 8px;
     display: flex;
     align-items: center;
-    padding-left: 1rem;
+    padding: 0 0.9rem;
     font-size: 0.9rem;
     color: var(--dark-text);
 }
@@ -102,11 +105,13 @@ p {
     background-color: transparent;
     border-radius: 4px;
     height: 90%;
-    width: 2.5rem;
+    min-width: 2.5rem;
 }
 
 .btn:hover {
     cursor: pointer;
+    background-color: var(--btn-hover);
+    color: var(--grey);
 }
 
 .clear-btn {
@@ -124,4 +129,17 @@ p {
     cursor: pointer;
     color: var(--box-border);
 }
+
+.completed {
+    background-color: var(--black);
+    color: var(--grey);
+    border: none;
+}
+
+.span-completed {
+    background-color: var(--light-green);
+    text-decoration: line-through;
+}
+
+
 

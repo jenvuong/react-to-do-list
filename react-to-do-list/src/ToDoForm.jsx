@@ -1,13 +1,17 @@
 import { useState } from "react"
 
-export function ToDoForm () {
+export function ToDoForm ({ addToDo }) {
     const [inputState, setInputState] = useState("")
-    const [toDoArray, setToDoArray] = useState([])
+   
 
     function handleSubmit(e) {
         e.preventDefault()
-
-       
+        
+        if (inputState) {
+            addToDo(inputState)
+        }
+        
+        setInputState("")
     }
 
     return (
@@ -22,6 +26,7 @@ export function ToDoForm () {
                     type="text" 
                     placeholder='Start typing...'
                     id='taskInput' 
+                    maxLength={25}
                 />
                 <button className='add-btn'>Add</button>
             </div>
