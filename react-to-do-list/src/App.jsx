@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import './styles.css'
+import './modal-style.css'
 import { ToDoForm } from "./ToDoForm";
 import { ToDoList } from "./ToDoList";
+import { Modal } from "./Modal";
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -12,6 +14,8 @@ export default function App () {
 
     return JSON.parse(localValue)
   })
+
+  const [modalStatus, setModalStatus] = useState(false)
 
   useEffect(() => {
     localStorage.setItem('ITEMS', JSON.stringify(toDoArray))
@@ -46,18 +50,35 @@ export default function App () {
     })
   }
 
-  function clearAll () {
+  function clearBtn () {
+    if (toDoArray.length !== 0) {
+      setModalStatus(true)
+    }
+    return
     
+  }
+
+  function onConfirm () {
+    setModalStatus(false)
     setToDoArray([])
+  }
+
+  function onCancel () {
+    setModalStatus(false)
+  }
+
+  function onClose () {
+    setModalStatus(false)
   }
 
   return (
     <div className="center">
       <ToDoForm addToDo={addToDo}/>
       <ToDoList list={toDoArray} deleteToDo={deleteToDo} toggle={toggle}/>
-      <button onClick={clearAll} className="clear-btn"><FontAwesomeIcon icon={faX}/>
+      <button onClick={clearBtn} className="clear-btn"><FontAwesomeIcon icon={faX}/>
         Clear all
       </button>
+      {modalStatus && (<Modal onConfirm={onConfirm} onCancel={onCancel} onClose={onClose}/>)}
     </div>
     
   )

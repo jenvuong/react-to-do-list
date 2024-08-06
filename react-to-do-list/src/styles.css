@@ -129,7 +129,7 @@ p {
 
 .clear-btn:hover {
     cursor: pointer;
-    color: var(--box-border);
+    color: var(--text);
 }
 
 .completed {
