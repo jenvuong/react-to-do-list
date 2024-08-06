@@ -55,7 +55,6 @@ export default function App () {
       setModalStatus(true)
     }
     return
-    
   }
 
   function onConfirm () {
@@ -80,6 +79,5 @@ export default function App () {
       </button>
       {modalStatus && (<Modal onConfirm={onConfirm} onCancel={onCancel} onClose={onClose}/>)}
     </div>
-    
   )
 }
