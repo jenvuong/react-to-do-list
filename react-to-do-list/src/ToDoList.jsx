@@ -1,6 +1,5 @@
 import { ToDoItem } from './ToDoItem'
-import { faX } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 export function ToDoList ({ list, deleteToDo, toggle }) {
     return (
@@ -20,7 +19,7 @@ export function ToDoList ({ list, deleteToDo, toggle }) {
             )
           })}
       </ul>
-      <button className="clear-btn"><FontAwesomeIcon icon={faX}/>Clear all</button>
+
     </>
     )
    

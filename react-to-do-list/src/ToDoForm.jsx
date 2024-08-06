@@ -26,7 +26,7 @@ export function ToDoForm ({ addToDo }) {
                     type="text" 
                     placeholder='Start typing...'
                     id='taskInput' 
-                    maxLength={25}
+                    maxLength={23}
                 />
                 <button className='add-btn'>Add</button>
             </div>

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import './styles.css'
 import { ToDoForm } from "./ToDoForm";
 import { ToDoList } from "./ToDoList";
+import { faX } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function App () {
   const [toDoArray, setToDoArray] = useState(() => {
@@ -44,10 +46,18 @@ export default function App () {
     })
   }
 
+  function clearAll () {
+    
+    setToDoArray([])
+  }
+
   return (
     <div className="center">
       <ToDoForm addToDo={addToDo}/>
       <ToDoList list={toDoArray} deleteToDo={deleteToDo} toggle={toggle}/>
+      <button onClick={clearAll} className="clear-btn"><FontAwesomeIcon icon={faX}/>
+        Clear all
+      </button>
     </div>
     
   )
