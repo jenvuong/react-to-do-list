@@ -14,7 +14,7 @@
     background-color: white;
     border-radius: 8px;
     padding: 2rem;
-    width: 40%;
+    width: 20%;
     height: 30%;
 }
 
@@ -24,10 +24,11 @@
     align-items: center;
     font-size: 2rem;
     height: 1.8rem;
+    margin-bottom: 2rem;
 }
 
 .modal-text {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .close {
