@@ -1,148 +1,169 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --grey: #ededed;
-    --black: #2c2c2c;
-    --text: #757575;
-    --box-border: #d9d9d9;
-    --dark-text: #1e1e1e;
-    --light-green: #E5F0E0;
-    --dark-green: #B7D0AB;
-    --btn-hover: #e2e2e2;
+  --grey: #ededed;
+  --black: #2c2c2c;
+  --text: #757575;
+  --box-border: #d9d9d9;
+  --dark-text: #1e1e1e;
+  --light-green: #e5f0e0;
+  --dark-green: #b7d0ab;
+  --btn-hover: #e2e2e2;
 }
 
 * {
-    font-family: Inter;
-    box-sizing: border-box;
+  font-family: Inter;
+  box-sizing: border-box;
 }
 
 body {
-    padding: 1rem;
-    margin: 0 auto;
-    overflow: hidden;
+  padding: 1rem;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .center {
-    width: 400px;
-    margin: 100px auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 500px;
+  margin: 60px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 form {
-    width: 100%;
+  width: 100%;
+}
+
+#cat-icon {
+  width: 100px;
+  margin-bottom: -20px;
 }
 
 h1 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 p {
-    color: var(--text);
-    margin-top: 10px;
-    margin-bottom: 2rem; 
+  color: var(--text);
+  margin-top: 10px;
+  margin-bottom: 2rem;
 }
 
 .input-box {
-    background-color: var(--grey);
-    border: none;
-    border-radius: 8px;
-    height: 2.5rem;
-    width: 70%;
-    padding: 15px;
-    margin: 0 10px;
-
+  background-color: var(--grey);
+  border: none;
+  border-radius: 8px;
+  height: 2.5rem;
+  width: 50%;
+  padding: 15px;
+  margin: 0 10px;
 }
+
 .add-btn {
-    background-color: var(--black);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    height: 2.5rem;
-    width: 4rem;
+  background-color: var(--black);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  height: 2.5rem;
+  width: 4rem;
 }
 
 .add-btn:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .list {
-    margin-top: 3rem;
-    list-style: none;
-    padding: 0 50px;
-    height: 400px;
-    scrollbar-width: none;
-    overflow-y: auto;
-    width: 100%;
-    color: var(--text);
-    font-size: .9rem;
+  margin-top: 3rem;
+  list-style: none;
+  padding: 0 50px;
+  height: 400px;
+  scrollbar-width: none;
+  overflow-y: auto;
+  width: 100%;
+  color: var(--text);
+  font-size: 0.9rem;
 }
 
 .list-item {
-    background-color: white;
-    height: 2.5rem;
-    margin-bottom: 0.8rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5px;
-    width: 100%;
+  background-color: white;
+  height: 2.5rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
 }
 
 .list-item span {
-    border: 1px solid var(--box-border);
-    height: 100%;
-    width: 80%;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    padding: 0 0.9rem;
-    font-size: 0.9rem;
-    color: var(--dark-text);
+  border: 1px solid var(--box-border);
+  height: 100%;
+  width: 90%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.9rem;
+  font-size: 0.9rem;
+  color: var(--dark-text);
 }
 
 .btn {
-    border: 1px solid var(--box-border);
-    background-color: transparent;
-    border-radius: 4px;
-    height: 90%;
-    min-width: 2.5rem;
+  border: 1px solid var(--box-border);
+  background-color: transparent;
+  border-radius: 4px;
+  height: 90%;
+  min-width: 2.5rem;
 }
 
 .btn:hover {
-    cursor: pointer;
-    background-color: var(--btn-hover);
-    color: var(--black);
+  cursor: pointer;
+  background-color: var(--btn-hover);
+  color: var(--black);
 }
 
 .clear-btn {
-    background-color: transparent;
-    border: none;
-    font-size: .9rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    margin-top: 1rem;
+  background-color: transparent;
+  border: none;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 1rem;
 }
 
 .clear-btn:hover {
-    cursor: pointer;
-    color: var(--text);
+  cursor: pointer;
+  color: var(--text);
 }
 
 .completed {
-    background-color: var(--black);
-    color: var(--grey);
-    border: none;
+  background-color: var(--black);
+  color: var(--grey);
+  border: none;
 }
 
 .span-completed {
-    background-color: var(--light-green);
-    text-decoration: line-through;
+  background-color: var(--light-green);
+  text-decoration: line-through;
 }
 
+#edit-btn {
+  border: none;
+}
 
+#edit-btn:hover {
+  background-color: transparent;
+  color: var(--text);
+}
 
+.edit-input-box {
+  border: 1px solid var(--box-border);
+  border-radius: 8px;
+  height: 2.5rem;
+  width: 80%;
+  padding: 15px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}

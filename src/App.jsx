@@ -25,7 +25,12 @@ export default function App() {
     setToDoArray((currentArray) => {
       return [
         ...currentArray,
-        { id: crypto.randomUUID(), itemName: newItem, completed: false },
+        {
+          id: crypto.randomUUID(),
+          itemName: newItem,
+          completed: false,
+          isEditing: false,
+        },
       ]
     })
   }
@@ -64,16 +69,54 @@ export default function App() {
 
   function onCancel() {
     setModalStatus(false)
+    setEditMode(false)
   }
 
   function onClose() {
     setModalStatus(false)
+    setEditMode(false)
+  }
+
+  function editTask(id) {
+    setToDoArray((currentArray) => {
+      return currentArray.map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            isEditing: !item.isEditing,
+          }
+        }
+        return item
+      })
+    })
+  }
+
+  function editItem(task, id) {
+    setToDoArray((currentArray) => {
+      return currentArray.map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            itemName: task,
+            isEditing: !item.isEditing,
+          }
+        }
+        return item
+      })
+    })
   }
 
   return (
-    <div className="center">
+    <main className="center">
+      <img src="svg/cat.svg" alt="cat icon" id="cat-icon" />
       <ToDoForm addToDo={addToDo} />
-      <ToDoList list={toDoArray} deleteToDo={deleteToDo} toggle={toggle} />
+      <ToDoList
+        list={toDoArray}
+        deleteToDo={deleteToDo}
+        toggle={toggle}
+        editTask={editTask}
+        editItem={editItem}
+      />
       <button onClick={clearBtn} className="clear-btn">
         <FontAwesomeIcon icon={faX} />
         Clear all
@@ -81,6 +124,6 @@ export default function App() {
       {modalStatus && (
         <Modal onConfirm={onConfirm} onCancel={onCancel} onClose={onClose} />
       )}
-    </div>
+    </main>
   )
 }
