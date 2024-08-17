@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import cat from './assets/cat.svg'
+import note from './assets/straight-note.svg'
 import './styles.css'
 import './components/modal-style.css'
 import ToDoForm from './components/ToDoForm'
@@ -108,23 +109,28 @@ export default function App() {
   }
 
   return (
-    <main className="center">
-      <img src={cat} alt="cat-icon" id="cat-icon" />
-      <ToDoForm addToDo={addToDo} />
-      <ToDoList
-        list={toDoArray}
-        deleteToDo={deleteToDo}
-        toggle={toggle}
-        editTask={editTask}
-        editItem={editItem}
-      />
-      <button onClick={clearBtn} className="clear-btn">
-        <FontAwesomeIcon icon={faX} />
-        Clear all
-      </button>
-      {modalStatus && (
-        <Modal onConfirm={onConfirm} onCancel={onCancel} onClose={onClose} />
-      )}
-    </main>
+    <>
+      <div className="hello">
+        <img src={note} alt="note-outline" id="note-outline" />
+      </div>
+      <main className="center">
+        <img src={cat} alt="cat-icon" id="cat-icon" />
+        <ToDoForm addToDo={addToDo} />
+        <ToDoList
+          list={toDoArray}
+          deleteToDo={deleteToDo}
+          toggle={toggle}
+          editTask={editTask}
+          editItem={editItem}
+        />
+        <button onClick={clearBtn} className="clear-btn">
+          <FontAwesomeIcon icon={faX} />
+          Clear all
+        </button>
+        {modalStatus && (
+          <Modal onConfirm={onConfirm} onCancel={onCancel} onClose={onClose} />
+        )}
+      </main>
+    </>
   )
 }
