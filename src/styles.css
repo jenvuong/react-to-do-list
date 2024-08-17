@@ -76,13 +76,25 @@ p {
 .list {
   margin-top: 3rem;
   list-style: none;
-  padding: 0 50px;
-  height: 400px;
-  scrollbar-width: none;
+  height: 380px;
+  padding: 0 20px;
   overflow-y: auto;
-  width: 100%;
+  width: 90%;
   color: var(--text);
   font-size: 0.9rem;
+}
+
+.list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  min-height: 50px;
+  background-color: var(--grey);
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  box-shadow: none;
 }
 
 .list-item {
@@ -130,7 +142,7 @@ p {
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .clear-btn:hover {
@@ -159,10 +171,11 @@ p {
 }
 
 .edit-input-box {
-  border: 1px solid var(--box-border);
+  border: 2px solid var(--black);
+  background-color: var(--grey);
   border-radius: 8px;
   height: 2.5rem;
-  width: 80%;
+  width: 65%;
   padding: 15px;
   margin-bottom: 15px;
   margin-right: 10px;
