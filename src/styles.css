@@ -110,7 +110,6 @@ p {
 }
 
 .list-item span {
-  background-color: white;
   border: 1px solid var(--box-border);
   height: 100%;
   width: 90%;
