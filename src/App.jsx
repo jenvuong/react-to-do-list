@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import cat from './assets/cat.svg'
 import './styles.css'
 import './components/modal-style.css'
 import ToDoForm from './components/ToDoForm'
@@ -108,7 +109,7 @@ export default function App() {
 
   return (
     <main className="center">
-      <img src="../svg/cat.svg" alt="cat-icon" id="cat-icon" />
+      <img src={cat} alt="cat-icon" id="cat-icon" />
       <ToDoForm addToDo={addToDo} />
       <ToDoList
         list={toDoArray}
