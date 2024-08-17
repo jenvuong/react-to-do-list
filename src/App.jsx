@@ -108,7 +108,7 @@ export default function App() {
 
   return (
     <main className="center">
-      <img src="svg/cat.svg" alt="cat icon" id="cat-icon" />
+      <img src="svg/cat.svg" alt="cat-icon" id="cat-icon" />
       <ToDoForm addToDo={addToDo} />
       <ToDoList
         list={toDoArray}
