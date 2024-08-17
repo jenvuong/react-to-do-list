@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 import './styles.css'
-import './modal-style.css'
-import { ToDoForm } from "./ToDoForm";
-import { ToDoList } from "./ToDoList";
-import { Modal } from "./Modal";
+import './components/modal-style.css'
+import ToDoForm from './components/ToDoForm'
+import ToDoList from './components/ToDoList'
+import Modal from './components/Modal'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function App () {
+export default function App() {
   const [toDoArray, setToDoArray] = useState(() => {
-    const localValue = localStorage.getItem("ITEMS")
+    const localValue = localStorage.getItem('ITEMS')
     if (localValue == null) return []
 
     return JSON.parse(localValue)
@@ -21,8 +21,8 @@ export default function App () {
     localStorage.setItem('ITEMS', JSON.stringify(toDoArray))
   }, [toDoArray])
 
-  function addToDo (newItem) {
-    setToDoArray(currentArray => {
+  function addToDo(newItem) {
+    setToDoArray((currentArray) => {
       return [
         ...currentArray,
         { id: crypto.randomUUID(), itemName: newItem, completed: false },
@@ -30,19 +30,19 @@ export default function App () {
     })
   }
 
-  function deleteToDo (id) {
+  function deleteToDo(id) {
     setToDoArray((currentArray) => {
-      return currentArray.filter(todo => todo.id !== id)
+      return currentArray.filter((todo) => todo.id !== id)
     })
   }
 
-  function toggle (id) {
+  function toggle(id) {
     setToDoArray((currentArray) => {
-      return currentArray.map(item => {
+      return currentArray.map((item) => {
         if (item.id === id) {
           return {
             ...item,
-            completed: !item.completed
+            completed: !item.completed,
           }
         }
         return item
@@ -50,34 +50,37 @@ export default function App () {
     })
   }
 
-  function clearBtn () {
+  function clearBtn() {
     if (toDoArray.length !== 0) {
       setModalStatus(true)
     }
     return
   }
 
-  function onConfirm () {
+  function onConfirm() {
     setModalStatus(false)
     setToDoArray([])
   }
 
-  function onCancel () {
+  function onCancel() {
     setModalStatus(false)
   }
 
-  function onClose () {
+  function onClose() {
     setModalStatus(false)
   }
 
   return (
     <div className="center">
-      <ToDoForm addToDo={addToDo}/>
-      <ToDoList list={toDoArray} deleteToDo={deleteToDo} toggle={toggle}/>
-      <button onClick={clearBtn} className="clear-btn"><FontAwesomeIcon icon={faX}/>
+      <ToDoForm addToDo={addToDo} />
+      <ToDoList list={toDoArray} deleteToDo={deleteToDo} toggle={toggle} />
+      <button onClick={clearBtn} className="clear-btn">
+        <FontAwesomeIcon icon={faX} />
         Clear all
       </button>
-      {modalStatus && (<Modal onConfirm={onConfirm} onCancel={onCancel} onClose={onClose}/>)}
+      {modalStatus && (
+        <Modal onConfirm={onConfirm} onCancel={onCancel} onClose={onClose} />
+      )}
     </div>
   )
 }
